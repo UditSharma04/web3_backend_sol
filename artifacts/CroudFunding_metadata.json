@@ -8,62 +8,8 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "campaigns",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
 						"internalType": "string",
-						"name": "title",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "target",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "deadline",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amountCollected",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "image",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_owner",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "_title",
+						"name": "_name",
 						"type": "string"
 					},
 					{
@@ -73,21 +19,21 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "_target",
+						"name": "_goal",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_deadline",
+						"name": "_durationInDays",
 						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "_image",
-						"type": "string"
 					}
 				],
-				"name": "createCampaign",
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "deadline",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -95,101 +41,37 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "description",
+				"outputs": [
 					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
-				"name": "donateToCampaign",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getCampaigns",
+				"name": "getContractBalance",
 				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "address",
-								"name": "owner",
-								"type": "address"
-							},
-							{
-								"internalType": "string",
-								"name": "title",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "description",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "target",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "deadline",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "amountCollected",
-								"type": "uint256"
-							},
-							{
-								"internalType": "string",
-								"name": "image",
-								"type": "string"
-							},
-							{
-								"internalType": "address[]",
-								"name": "donators",
-								"type": "address[]"
-							},
-							{
-								"internalType": "uint256[]",
-								"name": "donations",
-								"type": "uint256[]"
-							}
-						],
-						"internalType": "struct CroudFunding.Campaign[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "",
 						"type": "uint256"
-					}
-				],
-				"name": "getDonators",
-				"outputs": [
-					{
-						"internalType": "address[]",
-						"name": "",
-						"type": "address[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
 					}
 				],
 				"stateMutability": "view",
@@ -197,7 +79,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "numberOfCampaigns",
+				"name": "goal",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -206,6 +88,39 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -237,11 +152,11 @@
 	},
 	"sources": {
 		"contracts/CroudFunding.sol": {
-			"keccak256": "0x9c6e7667f4e5598d3137098e374776afaa6ac4d2baa3c655984f811562d38d8b",
-			"license": "UNLICENSED",
+			"keccak256": "0x349c8ed5bcdd94cc0972b29564136a351bf755e23599c952cad23be3b4e2c50a",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://c2ea5edb7e7ebdb06aec7c1839af7c183b10a1202cd90eaf37bbdfe1df0a3310",
-				"dweb:/ipfs/QmYsmmiZTsS93aPLzQBCwJy5iSrzBLKSWLAMdtKMfD2ZRH"
+				"bzz-raw://29ed985199f2c96bac6dc2aaa0bb6153fc253f83daf6cb230cdd0dbabc8d65d2",
+				"dweb:/ipfs/QmPCn3LCryYg8cRkcNqjU62VZdUEbZbE4FQJVtFHd2MkrM"
 			]
 		}
 	},
